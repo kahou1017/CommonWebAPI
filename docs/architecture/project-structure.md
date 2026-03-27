@@ -1,39 +1,39 @@
-# Common API 專案結構與命名規範
+﻿# Common API 撠?蝯????蝭?
 
-## 1. Solution / 專案結構
+## 1. Solution / 撠?蝯?
 
 ```text
 src/
-  CommonApi.Api/
-  CommonApi.Application/
-  CommonApi.Domain/
-  CommonApi.Infrastructure/
-  CommonApi.Contracts/
+  CommonWebApi.Api/
+  CommonWebApi.Application/
+  CommonWebApi.Domain/
+  CommonWebApi.Infrastructure/
+  CommonWebApi.Contracts/
 
 tests/
-  CommonApi.UnitTests/
-  CommonApi.IntegrationTests/
+  CommonWebApi.UnitTests/
+  CommonWebApi.IntegrationTests/
 ```
 
-## 2. 各專案職責
+## 2. ??獢鞎?
 
-### `CommonApi.Api`
+### `CommonWebApi.Api`
 
 - Controllers
 - Middleware
 - Filters
 - Swagger
-- DI 註冊入口
+- DI 閮餃??亙
 
-### `CommonApi.Application`
+### `CommonWebApi.Application`
 
 - Use Cases / Services
 - DTO
 - Validators
-- 介面契約
-- 流程協調
+- 隞憟?
+- 瘚??矽
 
-### `CommonApi.Domain`
+### `CommonWebApi.Domain`
 
 - Entities
 - Enums
@@ -41,27 +41,27 @@ tests/
 - Exceptions
 - Value Objects
 
-### `CommonApi.Infrastructure`
+### `CommonWebApi.Infrastructure`
 
-- Dapper 實作
+- Dapper 撖虫?
 - DB Connection Factory
-- 外部 API Client
+- 憭 API Client
 - Logging / Audit
 - Queue / BackgroundService
 
-### `CommonApi.Contracts`
+### `CommonWebApi.Contracts`
 
 - ApiResponse
 - ApiError
 - PagedResult
-- 共通 Request/Response Contract
+- ?梢?Request/Response Contract
 - Tracing Contract
 
 ---
 
-## 3. 目錄建議
+## 3. ?桅?撱箄降
 
-### 3.1 `CommonApi.Api`
+### 3.1 `CommonWebApi.Api`
 
 ```text
 Controllers/
@@ -71,7 +71,7 @@ Extensions/
 Configurations/
 ```
 
-### 3.2 `CommonApi.Application`
+### 3.2 `CommonWebApi.Application`
 
 ```text
 Abstractions/
@@ -81,7 +81,7 @@ Services/
 Validators/
 ```
 
-功能導向切法：
+?撠???嚗?
 
 ```text
 Features/
@@ -92,7 +92,7 @@ Features/
     Interfaces/
 ```
 
-### 3.3 `CommonApi.Domain`
+### 3.3 `CommonWebApi.Domain`
 
 ```text
 Entities/
@@ -102,7 +102,7 @@ Exceptions/
 ValueObjects/
 ```
 
-### 3.4 `CommonApi.Infrastructure`
+### 3.4 `CommonWebApi.Infrastructure`
 
 ```text
 Persistence/
@@ -122,7 +122,7 @@ Audit/
 DependencyInjection/
 ```
 
-### 3.5 `CommonApi.Contracts`
+### 3.5 `CommonWebApi.Contracts`
 
 ```text
 Responses/
@@ -132,28 +132,29 @@ Tracing/
 
 ---
 
-## 4. 命名原則
+## 4. ?賢???
 
-### 4.1 Repository / Client 命名
+### 4.1 Repository / Client ?賢?
 
-- DB Query：`ICustomerQueryRepository`
-- DB Command：`ICustomerCommandRepository`
-- 外部 API：`ICustomerProfileApiClient`
-- Application：`ICustomerQueryService`
+- DB Query嚗ICustomerQueryRepository`
+- DB Command嚗ICustomerCommandRepository`
+- 憭 API嚗ICustomerProfileApiClient`
+- Application嚗ICustomerQueryService`
 
-### 4.2 設計原則
+### 4.2 閮剛???
 
-- 功能導向優先於技術導向。
-- `Application` 只定義能力與流程，不綁定實作技術。
-- `Infrastructure` 明確區分：
+- ?撠??芸??潭?銵???
+- `Application` ?芸?蝢抵??瘚?嚗?蝬?撖虫??銵?
+- `Infrastructure` ?Ⅱ???
   - `Persistence`
   - `Integrations`
   - `Logging`
 
 ---
 
-## 5. 相關文件
+## 5. ?賊??辣
 
 - [overview.md](./overview.md)
 - [../api/response-spec.md](../api/response-spec.md)
 - [../logging/logging-and-trace-spec.md](../logging/logging-and-trace-spec.md)
+
